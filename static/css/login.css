@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Nunito Sans', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+
+}
+
+:root {
+    --c1 : #ff8600;
+    --c2 : #B2886A;
+    --c3 : #FFF6EA;
+    --c4 : #402E32;
+    --c5 : #854A3C;
+}
+
+#body {
+    background: linear-gradient(to left,var(--c4) 50%, var(--c3) 50%) no-repeat;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: var(--c4);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+a {
+    text-decoration: none;
+}
+p {
+    color: var(--c4);
+    font-size: 20px;
+}
+.login_container {
+
+    /* grid-template-rows: 20% 80%; */
+    height: 100vh;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title h1 {
+    font-size: 2.5rem;
+    color: linear-gradient(to left,var(--c3) 50%, var(--c4) 50%) no-repeat;;
+}
+.grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.grid-item {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.login-img {
+    display: grid;
+    grid-template-rows: 30% 70%;
+    height: 100vh;
+    width: 500px;
+}
+.login-form {
+    padding: 2rem 4rem 1rem 4rem;
+}
+.glass-morphism {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.9px);
+    -webkit-backdrop-filter: blur(9.9px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+body a {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+    color: var(--c2);
+}
+#button {
+    color: var(--c1);
+    border-color: var(--c1);
+}
+#button:hover {
+    color: var(--c3);
+    border-color: var(--c1);
+    background-color: var(--c1);
+}
+.form-text a {
+    position:static;
+}
+#invalid {
+    color: red;
+}
+.title h1 {
+    font-size: 2.4rem;
+    text-align: center;
+}
+.title-login {
+    padding-top: 3rem;
+}

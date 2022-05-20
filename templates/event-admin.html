@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCT-Events</title>
+
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+    <script src="{% static "javascript/main.js" %}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo" >KCT</a>
+    <ul>
+        <li> <a href="#home" class="active">ADD Event</a></li>
+        <li> <a href="#home" >UPDATE Event</a></li>
+        <li> <a href="#home" >DELETE Event</a></li>
+    </ul>
+</header>
+{% if user.is_authenticated %}
+<div id="logout">
+    <a class="text-logout"href="{% url 'logout' %}">Logout</a>
+</div>
+{% else %}
+<div id="logout">
+    <a class="text-logout"href="{% url 'login' %}">Login</a>
+</div>
+{% endif %}
+<section id="home">
+    <div class="back_img">
+        <img src="/static/images/kct_building.jpg" alt="">
+    </div>
+    <div class="home-container">
+    </div>
+    <div class="text">
+        <h1>Welcome to KCT Admin</h1>
+    </div>
+</section>
+    <div class="event_add">
+        <a class="text-logout"href="">ADD EVENT</a>
+    </div>
+    <div class="event_update">
+        <a class="text-logout"href="">REMOVE EVENT</a>
+    </div>
+    <div class="event_del">
+        <a class="text-logout"href="">MODIFY EVENT</a>
+    </div>
+
+    <section id="add-event">
+        <form class="" action="#" method="post">
+            {% csrf_token %}
+        
+            <div class="mb-3 row">
+              <label for="name" class="col-sm-2 col-form-label">Event Name </label>
+              <p class="col-sm-1 col-form-label"> :</p>
+              <div class="col-sm-9">
+                <input id="name" class="form-control input" type="text" name="name" placeholder="" required>
+              </div>
+            </div>
+    
+            <div class="mb-3 row">
+                <label for="organiser" class="col-sm-2 col-form-label">Event Organiser</label>
+                <p class="col-sm-1 col-form-label"> :</p>
+                <div class="col-sm-9">
+                  <input id="organiser" class="form-control input" type="text" name="organiser" placeholder="" required>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="poster" class="col-sm-2 col-form-label">Event Poster</label>
+                <p class="col-sm-1 col-form-label"> :</p>
+                <div class="col-sm-9">
+                  
+                </div>
+              </div>
+        
+            <div class="mb-3 row">
+              <div class="col-sm-9">
+                <select name="type" id="type">
+                  <option value="department">Department</option>
+                  <option value="club">CLUB</option>
+                </select>
+              </div>
+            </div>
+        
+            <div class="mb-3 row submit">
+                <input id="button" type="submit" class="btn btn-outline-primary" name="" value="Check Availability">
+            </div>
+        </form>
+    </section>
+</body>
+</html>
